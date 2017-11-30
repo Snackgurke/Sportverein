@@ -10,15 +10,23 @@
 using namespace std;
 
 int main(){
+    /******************Benutzer ausw.**************/
+    string user= login();
+    
+    
+    /******************Menu Zeigen**************/
     unsigned short auswahl=1;
-    //Menu Zeigen
-    //while(auswahl == 0){
+    while(auswahl != 0){
+        cout<< "Bitte warten..."<<endl;
+        system("sleep 3");
+        system("clear");
     auswahl = show_menu();
     //Nach der Auswahl die entsp. Funktion aufrufen
         switch(auswahl){
             case 0: //Programm beenden
-                cout << "\n Programm regulaer beendet!\n";
-                return 0;
+                system("clear");
+                cout << "\n Bis zum nächsten mal.. " << user << endl; ;
+                return 1;
                 break;
             case 1: //Mitglied Hinzufügen
                 cout << "comming soon!\n";
@@ -29,13 +37,10 @@ int main(){
             case 3: //BlablaBla
                 cout << "comming soon!\n";
                 break;
-            default:
+            default: //Falscher Wert eingegeben
                 cout << "\n *** falsche Eingabe" <<endl;
                 break;
-            break;  
-    //    }
+        }
     }
-    
-    
 return 0;
 }

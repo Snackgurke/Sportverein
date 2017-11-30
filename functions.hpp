@@ -13,9 +13,17 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+using namespace std;
 /* ------------- Eigene Funktionen --------------*/
-//Zeigt das Menu bis eingabe = 0
+//Benutzer auswahl
+unsigned short benutzer(void);
+
+//Benuter einloggen
+string login(void);
+
+//Menu anzeigen
 unsigned short show_menu(void);
+
 
 
 #endif /* functions_hpp */

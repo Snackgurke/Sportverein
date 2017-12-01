@@ -15,27 +15,33 @@ int main(){
     
     
     /******************Menu Zeigen**************/
-    unsigned short auswahl=1;
+    unsigned short auswahl=1,mi,vo;
     while(auswahl != 0){
-        cout<< "Bitte warten..."<<endl;
-        system("sleep 3");
+        cout<< "Lade das Menu..."<<endl;
         system("clear");
     auswahl = show_menu();
     //Nach der Auswahl die entsp. Funktion aufrufen
         switch(auswahl){
             case 0: //Programm beenden
                 system("clear");
-                cout << "\n Bis zum nächsten mal.. " << user << endl; ;
+                cout << "\n Bis zum nächsten mal.. " << user << endl << endl;
                 return 1;
                 break;
-            case 1: //Mitglied Hinzufügen
-                cout << "comming soon!\n";
+            case 1: //Mitglied verwalten
+                cout << "Mitglieder Verwalten...!\n";
+                system("clear");
+                mi = show_mitgl_menu();
+                case_mitgl(mi);
                 break;
-            case 2: //Mitglied entfernen
-                cout << "comming soon!\n";
+            case 2: //Vorstand verwalten
+                cout << "Vorstand Verwalten...!\n";
+                system("clear");
+                vo = show_vorst_menu();
+                case_vorst(vo);
                 break;
-            case 3: //BlablaBla
+            case 3: //Sonstiges Verwalten
                 cout << "comming soon!\n";
+                system("sleep 2");
                 break;
             default: //Falscher Wert eingegeben
                 cout << "\n *** falsche Eingabe" <<endl;

@@ -36,11 +36,80 @@ unsigned short show_menu(void){
     cout << setw(69) << "-" << endl;
     cout << endl;
     //Einlesen einer Auswahlmöglichkeit
-    cout << "Ihre Auswahl:" << endl;
+    cout << "Ihre Auswahl:";
     cin >> ausw;
     
     return ausw;
 }
+
+/*-------------------------------------------------*/
+//Zeigt das Menu mit den Auswahl möglichkeiten
+unsigned short show_mitgl_menu(void){
+    unsigned short i,ausw;
+    
+    //Auswahl möglichkeiten d. Menus
+    string eintrag[] = {
+        "Zurück",                    //case 0
+        "Mitglieder anzeigen",       //case 1
+        "Mitglied hinzufügen",       //case 2
+        "Mitglied entfernen ",       //case 3
+    };
+    //Anz. der Einträge ermitteln
+    unsigned short num = sizeof(eintrag) / sizeof(eintrag[0]);
+    //Ausgabe eines Menus
+    cout << setfill('+');
+    cout << setw(40) << "Mitglieder Verwalten";
+    cout << setw(29) << "+" << endl;
+    cout << endl;
+    cout << setfill(' ');
+    for (i=0; i<num; i++){
+        cout << setw(2) << "[" << i << "] " << eintrag[i] << endl;
+    }
+    cout << endl;
+    cout << setfill('+');
+    cout << setw(69) << "+" << endl;
+    cout << endl;
+    //Einlesen einer Auswahlmöglichkeit
+    cout << "Ihre Auswahl:";
+    cin >> ausw;
+    
+    return ausw;
+}
+
+/*-------------------------------------------------*/
+//Zeigt das Menu mit den Auswahl möglichkeiten
+unsigned short show_vorst_menu(void){
+    unsigned short i,ausw;
+    
+    //Auswahl möglichkeiten d. Menus
+    string eintrag[] = {
+        "Zurück",                   //case 0
+        "Vorstand anzeigen",        //case 1
+        "Vorstand ändern",          //case 2
+    };
+    //Anz. der Einträge ermitteln
+    unsigned short num = sizeof(eintrag) / sizeof(eintrag[0]);
+    //Ausgabe eines Menus
+    cout << setfill('+');
+    cout << setw(40) << "Vorstand Verwalten";
+    cout << setw(29) << "+" << endl;
+    cout << endl;
+    cout << setfill(' ');
+    for (i=0; i<num; i++){
+        cout << setw(2) << "[" << i << "] " << eintrag[i] << endl;
+    }
+    cout << endl;
+    cout << setfill('+');
+    cout << setw(69) << "+" << endl;
+    cout << endl;
+    //Einlesen einer Auswahlmöglichkeit
+    cout << "Ihre Auswahl:";
+    cin >> ausw;
+    
+    return ausw;
+}
+
+
 
 /*-------------------------------------------------*/
 //fragt einen Benutzer ab
@@ -52,7 +121,7 @@ unsigned short benutzer(void){
     cout << setw(40) << "Willkommen!";
     cout << setw(29) << "-" << endl;
     cout << endl;
-    cout << "Bitte Loggen sie sich ein:" << endl;
+    cout << "Bitte Loggen sie sich ein!" << endl;
     cout << "User: ";
     cin >> user;
     cout << "Passwort: ";
@@ -95,7 +164,7 @@ string login(void){
         cout << "\n *** Diesen User gibt es nicht!" <<endl;
         i++;
         cout << "verbleibende Versuche: " << i << "/3"<<endl;
-        system("sleep 2");
+        system("sleep 1");
         log = benutzer();
     }
     
@@ -128,4 +197,66 @@ string login(void){
     cout << "\nWillkommen " << user <<endl;
     return user;
 }
+
+
+void case_mitgl(unsigned short auswahl){
+    while(auswahl != 0){
+        //Nach der Auswahl die entsp. Funktion aufrufen
+        switch(auswahl){
+            case 0: //Zurück
+                system("clear");
+                return;
+                break;
+            case 1: //Mitglieder anzeigen
+                cout << "Mitglieder anzeigen...!\n";
+                system("sleep 2");
+                /***********Hier Einfügen**********/
+                break;
+            case 2: //Mitglied hinzufügen
+                cout << "Mitglied hinzufügen...!\n";
+                system("sleep 2");
+                /***********Hier Einfügen**********/
+                break;
+            case 3: //Mitglied entfernen
+                cout << "Mitglied entfernen....!\n";
+                system("sleep 2");
+                /***********Hier Einfügen**********/
+                break;
+            default: //Falscher Wert eingegeben
+                cout << "\n *** falsche Eingabe" <<endl;
+                break;
+        }//case
+        system("clear");
+        auswahl = show_mitgl_menu();
+    }//while
+}
+
+
+void case_vorst(unsigned short auswahl){
+        while(auswahl != 0){
+            //Nach der Auswahl die entsp. Funktion aufrufen
+            switch(auswahl){
+                case 0: //Zurück
+                    system("clear");
+                    return;
+                    break;
+                case 1: //Vorstand anzeigen
+                    cout << "Vorstand anzeigen...!\n";
+                    system("sleep 2");
+                    /***********Hier Einfügen**********/
+                    break;
+                case 2: //Vorstand ändern
+                    cout << "Vorstand ändern...!\n";
+                    system("sleep 2");
+                    /***********Hier Einfügen**********/
+                    break;
+                default: //Falscher Wert eingegeben
+                    cout << "\n *** falsche Eingabe" <<endl;
+                    break;
+            }//case
+            system("clear");
+            auswahl = show_vorst_menu();
+        }//while
+}
+
 

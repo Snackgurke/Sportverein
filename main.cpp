@@ -12,7 +12,7 @@ using namespace std;
 int main(){
     /******************Benutzer ausw.**************/
     string user= login();
-    
+    ::len = getmebers(::mitglieder);
     
     /******************Menu Zeigen**************/
     unsigned short auswahl=1,mi,vo;

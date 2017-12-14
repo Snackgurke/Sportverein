@@ -13,8 +13,12 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include "mitglied.h"
+#include "fileio.hpp"
 using namespace std;
 /* ----------------------- Eigene Funktionen -------------------------*/
+mitglied *mitglieder[10]={NULL};
+int len;
 /* ------------ Benutzer Funktionen --------------*/
 //Benutzer auswahl
 unsigned short benutzer(void);
@@ -38,6 +42,10 @@ void case_mitgl(unsigned short auswahl);
 //Case Auswahl für Vorstand <- Hier Vorstands funktionen einfügen
 void case_vorst(unsigned short auswahl);
 
+//Marians Funktionen
+void delete_member(mitglied *member);
+
+void show_all_members(mitglied *mitglieder[], int len);
 
 
 #endif /* functions_hpp */

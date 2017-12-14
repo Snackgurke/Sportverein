@@ -210,6 +210,7 @@ void case_mitgl(unsigned short auswahl){
             case 1: //Mitglieder anzeigen
                 cout << "Mitglieder anzeigen...!\n";
                 system("sleep 2");
+                show_all_members(::mitglieder, ::len);
                 /***********Hier Einfügen**********/
                 break;
             case 2: //Mitglied hinzufügen
@@ -258,5 +259,23 @@ void case_vorst(unsigned short auswahl){
             auswahl = show_vorst_menu();
         }//while
 }
+
+//Marians Funktionen
+void delete_member(mitglied *member){
+    /* löscht dyn. allozierten Pointer auf ein Mitglied und setzt ihn auf
+     NULL */
+    delete member;
+    member=NULL;
+}
+
+void show_all_members(mitglied *mitglieder[], int len){
+    for(int i=0; i<len; i++){
+        if(mitglieder[i]!=NULL){
+            mitglieder[i]->print_mitglied();
+        }
+    }
+    
+}
+
 
 

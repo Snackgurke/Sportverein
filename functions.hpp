@@ -13,6 +13,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <cstdlib>
 #include "mitglied.h"
 #include "fileio.hpp"
 using namespace std;

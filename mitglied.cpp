@@ -106,8 +106,8 @@ string mitglied::output_one_line(){
     string out;
     char speicher[5];
     char speicher1[6];
-    out = (string) itoa(nummer,speicher,10)+";"+name_m.out_name()+";"+geburtstag.out_datum()+";"+eintritt.out_datum()+";"+adresse_m.out_adresse()+";"+telefon+";"+email+";"+(string) itoa(punkte,speicher1,10)+";"+sportarten;
-}
+    out = std::to_string(nummer)+";"+name_m.out_name()+";"+geburtstag.out_datum()+";"+eintritt.out_datum()+";"+adresse_m.out_adresse()+";"+telefon+";"+email+";"+ std::to_string(punkte)+";"+sportarten;
+}/*******************/
 
 name::name(){};
 
@@ -145,9 +145,9 @@ string datum::out_datum(){
     char speicher[3];
     char speicher2[3];
     char speicher3[5];
-    out = (string) itoa(tag,speicher,10)+";"+(string) itoa(monat,speicher2,10)+";"+(string) itoa(jahr,speicher3,10);
+    out = to_string(tag)+";"+std::to_string(monat)+";"+to_string(jahr);
     return out;
-}
+}/*******************/
 
 adresse::adresse(){};
 
@@ -166,5 +166,5 @@ void adresse::print_adresse(){
 string adresse::out_adresse(){
     string out;
     char speicher[6];
-    out = strasse+";"+nummer+";"+zusatz+";"+(string) itoa(postleitzahl,speicher,10)+";"+ort;
-}
+    out = strasse+";"+nummer+";"+zusatz+";"+std::to_string(postleitzahl)+";"+ort;
+}/*******************/

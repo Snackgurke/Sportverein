@@ -149,7 +149,7 @@ unsigned short benutzer(void){
     if (user != "admin" || user != "marian" || user != "jonas" || user != "kai"){
         return 4;
     }
-
+    return 5;
 }
 
 /*-------------------------------------------------*/
@@ -198,7 +198,7 @@ string login(void){
     return user;
 }
 
-
+//Menu zur Mitgliederverwaltung
 void case_mitgl(unsigned short auswahl){
     while(auswahl != 0){
         //Nach der Auswahl die entsp. Funktion aufrufen
@@ -231,7 +231,7 @@ void case_mitgl(unsigned short auswahl){
     }//while
 }
 
-
+//Menu für die Vorstand verwaltung
 void case_vorst(unsigned short auswahl){
         while(auswahl != 0){
             //Nach der Auswahl die entsp. Funktion aufrufen
